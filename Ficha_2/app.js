@@ -98,4 +98,97 @@ function drawBox(heigth){
         line=""
     }
 }
-drawBox(10)
+//drawBox(10)
+
+
+let aluno1={nome:"joao",nota:3};
+var alunos=[];
+alunos.push(aluno1)
+
+let aluno2={nome:"qntonio",nota:8};
+alunos.push(aluno2)
+
+let aluno3={nome:"francisco",nota:15};
+alunos.push(aluno3)
+
+let aluno4={nome:"pedro",nota:18};
+alunos.push(aluno4)
+
+function seeStudent(alunos){
+    for(let i=0;i<alunos.length;i++){
+        console.log("O "+alunos[i].nome+" teve "+alunos[i].nota)
+    }
+}
+//seeStudent(alunos)
+function greatesGrade(alunos){
+    var bestgrade=alunos[0]
+    for(let i=0;i<alunos.length;i++){
+        console.log(alunos[i+1])
+        if(alunos[i].nota>bestgrade.nota){
+            bestgrade=alunos[i]
+        }
+
+    }
+    console.log("O melhor aluno foi "+bestgrade.nome+" com a nota "+bestgrade.nota)
+}
+function lowestGrade(alunos){
+    var bestgrade=alunos[0]
+    for(let i=0;i<alunos.length;i++){
+        console.log(alunos[i+1])
+        if(alunos[i].nota<bestgrade.nota){
+            bestgrade=alunos[i]
+        }
+
+    }
+    console.log("O pior aluno foi "+bestgrade.nome+" com a nota "+bestgrade.nota)
+}
+function avrgGrade(alunos){
+    let avg=0
+    let soma=0
+    for(let i=0;i<alunos.length;i++){
+        soma+=alunos[i].nota
+    }
+    avg=soma/alunos.length
+    console.log(avg)
+}
+function negativeGrades(alunos){
+    for(let i=0;i<alunos.length;i++){
+        if(alunos[i].nota<9.5){
+            console.log("O "+alunos[i].nome+" chumbou com a nota "+alunos[i].nota)
+        }
+    }
+}
+function positiveGrades(alunos){
+    for(let i=0;i<alunos.length;i++){
+        if(alunos[i].nota<9.5){
+            console.log("O "+alunos[i].nome+" chumbou com a nota "+alunos[i].nota)
+        }
+    }
+}
+function menuGrades(alunos,menu){
+    switch(menu){
+        case "a":
+                seeStudent(alunos);
+                break;
+        case "c":
+                greatesGrade(alunos);
+                break;
+        case "d":
+                lowestGrade(alunos);
+                break;
+        case "e":
+                avrgGrade(alunos);
+                break;
+        case "f":
+                negativeGrades(alunos);
+                break;
+        case "g":
+                positiveGrades(alunos);
+                break;
+        case "s":
+                return; 
+        default:
+                console.log("Opção inválida!");
+    }
+}
+menuGrades(alunos,"a")
