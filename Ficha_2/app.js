@@ -22,7 +22,7 @@ function reverseWords(str){
     }
     return reversedstr
 }
-console.log(reverseWords("hoje e domingo"))
+//console.log(reverseWords("hoje e domingo"))
 
 function voals(str){
     let count=0
@@ -32,9 +32,9 @@ function voals(str){
     }
     return count
 }
-console.log(voals("olaaaaa"))
+//console.log(voals("olaaaaa"))
 
-function countleter(leter,phrase){
+function countLeter(leter,phrase){
     phrase=phrase.toLowerCase();
     leter=leter.toLowerCase();
     let count=0
@@ -44,8 +44,58 @@ function countleter(leter,phrase){
     }
     return count
 }
-console.log(countleter("a","ola tiaga e linda"))
+//console.log(countLeter("a","ola tiaga e linda"))
 
 function workingHours(entrada,out){
     worked=entrada-out
 }
+
+function drawRectangle(width, heigth){
+    var line="";
+    for(let j=0;j<heigth;j++){
+        for(let i=0;i<width;i++){
+            line+="*"
+        }
+        console.log(line)
+        line=""
+    }
+    
+}
+//drawRectangle(2,5)
+function drawTriangle(heigth){
+    var line=""
+    var width=1
+    for(let j=0;j<heigth;j++){
+        for(let i=0;i<width;i++){
+            line+="*"
+        }
+        console.log(line)
+    }
+}
+//drawTriangle(10)
+
+function drawBox(heigth){
+    var line=""
+    for(let i=0;i<heigth;i++){
+        if(i==0 || i==heigth-1){
+            for(let j=0; j<heigth;j++){
+                line+="*"
+            }
+            console.log(line)
+
+        }
+        else{
+            for(let k=0;k<heigth;k++){
+                if(k==0||k==heigth-1){
+                    line+="*"
+                }
+                else{
+                    line+=" "
+                }
+            }
+            console.log(line)
+        }
+        line=""
+    }
+}
+drawBox(10)
