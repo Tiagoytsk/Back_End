@@ -152,11 +152,14 @@ function avrgGrade(alunos){
     console.log(avg)
 }
 function negativeGrades(alunos){
+    let count=0
     for(let i=0;i<alunos.length;i++){
         if(alunos[i].nota<9.5){
             console.log("O "+alunos[i].nome+" chumbou com a nota "+alunos[i].nota)
+            count++
         }
     }
+    console.log("O numero total de negativas foram:"+count)
 }
 function positiveGrades(alunos){
     for(let i=0;i<alunos.length;i++){
@@ -191,4 +194,27 @@ function menuGrades(alunos,menu){
                 console.log("Opção inválida!");
     }
 }
-menuGrades(alunos,"a")
+menuGrades(alunos,"f")
+
+function calcularTempoDeTrabalho(horaEntrada, horaSaida) {
+    const horaAbertura = new Date();
+    horaAbertura.setHours(8, 0, 0); // 08:00:00
+    const horaFechamento = new Date();
+    horaFechamento.setHours(18, 0, 0); // 18:00:00
+    const entrada = new Date('1970-01-01T' + horaEntrada);
+    const saida = new Date('1970-01-01T' + horaSaida);
+    if (entrada < horaAbertura || saida > horaFechamento) {
+        return "Fora do horário de trabalho!";
+    }
+    const tempoDeTrabalho = saida - entrada;
+    const horas = Math.floor(tempoDeTrabalho / 3600000);
+    const minutos = Math.floor((tempoDeTrabalho % 3600000) / 60000);
+    const segundos = Math.floor((tempoDeTrabalho % 60000) / 1000);
+
+    return `Tempo de trabalho: ${horas} horas, ${minutos} minutos, ${segundos} segundos.`;
+}
+
+const horaEntrada = '09:30:00';
+const horaSaida = '17:45:00';
+
+console.log(calcularTempoDeTrabalho(horaEntrada, horaSaida));
