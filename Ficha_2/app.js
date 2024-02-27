@@ -162,11 +162,14 @@ function negativeGrades(alunos){
     console.log("O numero total de negativas foram:"+count)
 }
 function positiveGrades(alunos){
+    let count=0
     for(let i=0;i<alunos.length;i++){
         if(alunos[i].nota<9.5){
             console.log("O "+alunos[i].nome+" chumbou com a nota "+alunos[i].nota)
+            count++
         }
     }
+    console.log("O numero de positivas foram: "+count)
 }
 function menuGrades(alunos,menu){
     switch(menu){
