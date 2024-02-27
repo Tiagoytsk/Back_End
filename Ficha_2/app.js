@@ -44,7 +44,7 @@ function countLeter(leter,phrase){
     }
     return count
 }
-//console.log(countLeter("a","ola tiaga e linda"))
+//console.log(countLeter("a","ola "))
 
 function workingHours(entrada,out){
     worked=entrada-out
